@@ -2,80 +2,99 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Surya Pratap Singh | Portfolio</title>
+  <title>Investment Risk/Reward Calculator</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-      background: #f4f4f9;
-      color: #333;
+      background: #f9f9f9;
       text-align: center;
+      padding: 40px;
     }
-    header {
-      background: #0078d7;
-      color: white;
-      padding: 30px 0;
-    }
-    h1 {
-      margin: 0;
-    }
-    section {
-      margin: 30px auto;
-      max-width: 800px;
-      padding: 20px;
+    .card {
       background: white;
-      border-radius: 8px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      border-radius: 10px;
+      max-width: 450px;
+      margin: auto;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
     }
-    ul {
-      list-style: none;
-      padding: 0;
-    }
-    li {
-      background: #f0f0f0;
-      margin: 8px 0;
+    input, button {
+      margin: 10px;
       padding: 10px;
+      width: 90%;
+    }
+    button {
+      background: #007bff;
+      color: white;
+      border: none;
       border-radius: 5px;
+      cursor: pointer;
     }
-    footer {
-      margin-top: 30px;
-      padding: 15px;
-      background: #222;
-      color: #fff;
+    button:hover {
+      background: #0056b3;
     }
-    a {
-      color: #0078d7;
-      text-decoration: none;
+    h2 {
+      color: #333;
     }
-    a:hover {
-      text-decoration: underline;
+    h3 {
+      color: #444;
     }
   </style>
 </head>
 <body>
-  <header>
-    <h1>Hello, I'm Surya 👋</h1>
-    <p>Electronics & Communication Engineer | Python & ML Enthusiast</p>
-  </header>
 
-  <section>
-    <h2>Projects</h2>
-    <ul>
-      <li>💹 Intraday Investment Calculator</li>
-      <li>🌐 IP Address Tracker</li>
-      <li>🤖 Facial Expression Recognition using CNN</li>
-    </ul>
-  </section>
+  <div class="card">
+    <h2>📈 Investment Risk/Reward Calculator</h2>
 
-  <section>
-    <h2>Contact</h2>
-    <p>Email: <a href="mailto:your-email@example.com">aurianway101@gmail.com</a></p>
-    <p>GitHub: <a href="https://github.com/Aurian25" target="_blank">Aurian25</a></p>
-  </section>
+    <input type="number" id="entry" placeholder="Entry Price" />
+    <input type="number" id="quantity" placeholder="Quantity" />
+    <input type="number" id="stoploss" placeholder="Stop Loss Price" />
+    <input type="number" id="target" placeholder="Target Price" />
 
-  <footer>
-    <p>© 2025 Surya Pratap Singh. All rights reserved.</p>
-  </footer>
+    <button onclick="calculate()">Calculate</button>
+
+    <h3 id="sl"></h3>
+    <h3 id="tp"></h3>
+    <h3 id="rr"></h3>
+  </div>
+
+  <script>
+    class MyInvestment {
+      constructor(entryPrice, quantity, stopLossPrice, targetPrice) {
+        this.entryPrice = entryPrice;
+        this.quantity = quantity;
+        this.stopLossPrice = stopLossPrice;
+        this.targetPrice = targetPrice;
+      }
+
+      stopLoss() {
+        return (this.entryPrice - this.stopLossPrice) * this.quantity;
+      }
+
+      targetProfit() {
+        return (this.targetPrice - this.entryPrice) * this.quantity;
+      }
+
+      riskToReward() {
+        let sl = this.stopLoss();
+        let tp = this.targetProfit();
+        return tp / sl;
+      }
+    }
+
+    function calculate() {
+      let entry = parseFloat(document.getElementById("entry").value);
+      let quantity = parseInt(document.getElementById("quantity").value);
+      let stoploss = parseFloat(document.getElementById("stoploss").value);
+      let target = parseFloat(document.getElementById("target").value);
+
+      let investment = new MyInvestment(entry, quantity, stoploss, target);
+
+      document.getElementById("sl").innerText = "Stop Loss = ₹" + investment.stopLoss().toFixed(2);
+      document.getElementById("tp").innerText = "Target Profit = ₹" + investment.targetProfit().toFixed(2);
+      document.getElementById("rr").innerText = "Risk to Reward Ratio = " + investment.riskToReward().toFixed(2);
+    }
+  </script>
+
 </body>
 </html>
