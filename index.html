@@ -6,108 +6,49 @@
   <title>Surya Pratap Singh - Portfolio</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: Arial, sans-serif;
-    }
-
-    body {
-      display: flex;
-      min-height: 100vh;
-      background: #f5f5f5;
-    }
+    * { margin: 0; padding: 0; box-sizing: border-box; font-family: Arial, sans-serif; }
+    body { display: flex; min-height: 100vh; background: #f5f5f5; }
 
     /* Sidebar */
     .sidebar {
-      width: 220px;
-      background: #222;
-      color: white;
-      position: fixed;
-      top: 0;
-      left: 0;
-      bottom: 0;
+      width: 220px; background: #222; color: white;
+      position: fixed; top: 0; left: 0; bottom: 0;
       padding-top: 20px;
     }
-
-    .sidebar h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      font-size: 20px;
-    }
-
-    .sidebar ul {
-      list-style: none;
-    }
-
-    .sidebar ul li {
-      margin: 15px 0;
-    }
-
+    .sidebar h2 { text-align: center; margin-bottom: 30px; font-size: 20px; }
+    .sidebar ul { list-style: none; }
+    .sidebar ul li { margin: 15px 0; }
     .sidebar ul li a {
-      text-decoration: none;
-      color: white;
-      display: block;
-      padding: 10px 20px;
-      transition: background 0.3s;
+      text-decoration: none; color: white; display: block;
+      padding: 10px 20px; transition: background 0.3s;
     }
+    .sidebar ul li a:hover { background: #444; }
+    .sidebar ul li a i { margin-right: 10px; }
 
-    .sidebar ul li a:hover {
-      background: #444;
-    }
-
-    .sidebar ul li a i {
-      margin-right: 10px;
-    }
-
-    /* Main Content */
+    /* Main */
     .main-content {
-      margin-left: 220px;
-      padding: 20px;
+      margin-left: 220px; padding: 20px;
       width: calc(100% - 220px);
     }
-
     section {
-      min-height: 100vh;
-      padding: 60px;
+      min-height: 100vh; padding: 60px;
       border-bottom: 1px solid #ddd;
     }
+    section h1 { font-size: 28px; margin-bottom: 20px; color: #333; }
+    section p, li { font-size: 18px; line-height: 1.6; color: #555; }
+    ul { margin-top: 10px; }
+    li { margin-bottom: 8px; }
 
-    section h1 {
-      font-size: 28px;
-      margin-bottom: 20px;
-      color: #333;
-    }
+    html { scroll-behavior: smooth; }
 
-    section p {
-      font-size: 18px;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    /* Back to top button */
+    /* Back to top */
     #backToTop {
-      position: fixed;
-      bottom: 30px;
-      right: 30px;
-      background: #222;
-      color: white;
-      padding: 10px 15px;
-      border-radius: 50%;
-      font-size: 18px;
-      display: none;
+      position: fixed; bottom: 30px; right: 30px;
+      background: #222; color: white; padding: 10px 15px;
+      border-radius: 50%; font-size: 18px; display: none;
       cursor: pointer;
     }
-
-    #backToTop:hover {
-      background: #444;
-    }
+    #backToTop:hover { background: #444; }
   </style>
 </head>
 <body>
@@ -116,8 +57,10 @@
     <h2>My Portfolio</h2>
     <ul>
       <li><a href="#home"><i class="fa fa-home"></i> Home</a></li>
-      <li><a href="#portfolio"><i class="fa fa-folder"></i> Portfolio</a></li>
-      <li><a href="#about"><i class="fa fa-user"></i> About</a></li>
+      <li><a href="#projects"><i class="fa fa-folder"></i> Projects</a></li>
+      <li><a href="#skills"><i class="fa fa-code"></i> Skills</a></li>
+      <li><a href="#education"><i class="fa fa-graduation-cap"></i> Education</a></li>
+      <li><a href="#certifications"><i class="fa fa-certificate"></i> Certifications</a></li>
       <li><a href="#contact"><i class="fa fa-phone"></i> Contact</a></li>
     </ul>
   </div>
@@ -126,28 +69,66 @@
   <div class="main-content">
     <!-- Home -->
     <section id="home">
-      <h1>Welcome to My Portfolio</h1>
-      <p>This is my personal website hosted on GitHub Pages.</p>
+      <h1>Welcome!</h1>
+      <p>01 &nbsp; <span>Hi, I'm Surya!</span></p>
+      <p>02 &nbsp; &lt; A 2025 B.E. graduated ECE student passionate about coding, technology, and innovation.  
+    Eager to learn new things, pick new skills, and make the best out of opportunities while contributing to the growth of an organization. &gt;</p>
+      <p>03 &nbsp; <span>I also work with Python, Java, and AI/ML projects.</span></p>
     </section>
 
-    <!-- Portfolio -->
-    <section id="portfolio">
-      <h1>My Projects</h1>
-      <p>Details about my projects will go here.</p>
+    <!-- Projects -->
+    <section id="projects">
+      <h1>Projects</h1>
+      <ul>
+        <li><b>Facial Expression Recognition (CNN, Python, ML)</b> – Developed a system to classify human emotions using CNNs with high accuracy.</li>
+        <li><b>Chat Companion (ChatBot, Python, GenAI, Tkinter)</b> – Built a chatbot using Google Gemini-Pro API with real-time responses.</li>
+        <li><b>IP Address Tracker (HTML, CSS, Geolocation API)</b> – Real-time IP tracking with interactive map and responsive design.</li>
+        <li><b>Predicting Air Quality Index (Python, React.js)</b> – Web-app to predict AQI based on climatic conditions.</li>
+      </ul>
     </section>
 
-    <!-- About -->
-    <section id="about">
-      <h1>About Me</h1>
-      <p>Hello! I'm Surya Pratap Singh, a 2025 B.E. graduated ECE student passionate about coding, technology and innovation. 
-      Eager to learn new things, pick new skills and make the best out of opportunities and contribute to the growth of an organization.</p>
+    <!-- Skills -->
+    <section id="skills">
+      <h1>Skills</h1>
+      <ul>
+        <li><b>Languages:</b> Python, C</li>
+        <li><b>Frontend:</b> HTML5, CSS3, React.js</li>
+        <li><b>Backend:</b> Node.js</li>
+        <li><b>Database:</b> MySQL, SQLite</li>
+        <li><b>Concepts:</b> DSA, OOP, OS, DBMS, API Integration</li>
+        <li><b>Tools:</b> Git, GitHub, Ubuntu, VS Code, Jupyter Notebook</li>
+      </ul>
+    </section>
+
+    <!-- Education -->
+    <section id="education">
+      <h1>Education</h1>
+      <ul>
+        <li><b>RNSIT Bangalore</b> – B.Tech in Electronics & Communication, CGPA: 8.44 (2021–2025)</li>
+        <li><b>Kendriya Vidyalaya, Azamgarh</b> – Class 12, 83.4% (2020)</li>
+        <li><b>Kendriya Vidyalaya, Azamgarh</b> – Class 10, 87% (2018)</li>
+      </ul>
+    </section>
+
+    <!-- Certifications -->
+    <section id="certifications">
+      <h1>Certifications</h1>
+      <ul>
+        <li>Python (Basics) – HackerRank</li>
+        <li>Fundamentals of Network Communication – University of Colorado</li>
+        <li>VLSI for Beginners</li>
+        <li>Programming Fundamentals using Python – Infosys Springboard</li>
+        <li>MATLAB Onramp</li>
+      </ul>
     </section>
 
     <!-- Contact -->
     <section id="contact">
       <h1>Contact Me</h1>
-      <p>Email: yourmail@example.com</p>
-      <p>LinkedIn: <a href="https://linkedin.com/in/yourprofile" target="_blank">View Profile</a></p>
+      <p>Email: <a href="mailto:1rn21ec144.surya@gmail.com">1rn21ec144.surya@gmail.com</a></p>
+      <p>Phone: +91 958072068</p>
+      <p>LinkedIn: <a href="https://linkedin.com/in/yourusername" target="_blank">linkedin.com/in/yourusername</a></p>
+      <p>GitHub: <a href="https://github.com/Aurian25" target="_blank">github.com/Aurian25</a></p>
     </section>
   </div>
 
@@ -155,17 +136,12 @@
   <div id="backToTop"><i class="fa fa-arrow-up"></i></div>
 
   <script>
-    // Show/hide back to top button
+    // Back to Top Button
     window.addEventListener("scroll", function() {
       const btn = document.getElementById("backToTop");
-      if (window.scrollY > 200) {
-        btn.style.display = "block";
-      } else {
-        btn.style.display = "none";
-      }
+      if (window.scrollY > 200) { btn.style.display = "block"; }
+      else { btn.style.display = "none"; }
     });
-
-    // Scroll to top when button clicked
     document.getElementById("backToTop").addEventListener("click", function() {
       window.scrollTo({ top: 0, behavior: "smooth" });
     });
