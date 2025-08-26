@@ -11,25 +11,54 @@
 
     /* Sidebar */
     .sidebar {
+  width: 230px;
   background: linear-gradient(180deg, #0f2027, #203a43, #2c5364);
   color: white;
+  position: fixed;
+  height: 100%;
+  padding-top: 20px;
+  text-align: center;
+}
+
+.sidebar h2 {
+  margin: 15px 0;
+  font-size: 22px;
+  font-weight: bold;
+  color: #fff;
 }
 
 /* Sidebar links */
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar ul li {
+  margin: 15px 0;
+}
+
 .sidebar ul li a {
-  padding: 12px 20px;
+  color: #ddd;
+  text-decoration: none;
+  font-size: 16px;
+  padding: 10px 15px;
+  display: block;
   border-radius: 6px;
   transition: 0.3s;
 }
-.sidebar ul li a:hover {
-  background: rgba(255,255,255,0.1);
+
+.sidebar ul li a:hover,
+.sidebar ul li a.active {
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
 }
 
     /* Main */
     .main-content {
-      margin-left: 220px; padding: 20px;
-      width: calc(100% - 220px);
-    }
+  margin-left: 240px;  /* same as sidebar width (or slightly more) */
+  padding: 20px 30px;  /* smaller padding */
+  max-width: 1000px;   /* allow content to spread */
+}
     section {
   padding: 40px 60px;   /* smaller padding */
   margin-bottom: 40px;  /* smaller gap */
