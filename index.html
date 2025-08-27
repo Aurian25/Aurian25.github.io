@@ -102,7 +102,24 @@
   border-radius: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.1);
 }
+  .progress {
+  background: #e0e0e0;
+  border-radius: 20px;
+  overflow: hidden;
+  width: 300px;
+  height: 20px;
+  margin: 5px 0 15px;
+}
 
+.progress-bar {
+  height: 100%;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  line-height: 20px;
+  background: linear-gradient(90deg, #007bff, #00c6ff);
+  transition: width 0.6s ease;
+}
     /* Back to top */
     #backToTop {
       position: fixed; bottom: 30px; right: 30px;
@@ -140,14 +157,35 @@
     </section>
 
     <!-- Education -->
-    <section id="education">
-      <h1>Education</h1>
-      <ul>
-        <li><b>RNSIT Bangalore</b> – B.Tech in Electronics & Communication, CGPA: 8.44 (2021–2025)</li>
-        <li><b>Kendriya Vidyalaya, Azamgarh</b> – Class 12, 83.4% (2020)</li>
-        <li><b>Kendriya Vidyalaya, Azamgarh</b> – Class 10, 87% (2018)</li>
-      </ul>
-    </section>
+    <section id="education" class="section">
+  <h2>🎓 Education</h2>
+  <ul>
+    <li>
+      <b>RNSIT Bangalore</b> – B.Tech in Electronics & Communication (2021–2025)  
+      <p>CGPA: 8.44 / 10</p>
+      <div class="progress">
+        <div class="progress-bar" style="width: 84%;">84%</div>
+      </div>
+    </li>
+
+    <li>
+      <b>Kendriya Vidyalaya, Azamgarh</b> – Class 12 (2020)  
+      <p>Percentage: 83.4%</p>
+      <div class="progress">
+        <div class="progress-bar" style="width: 83%;">83%</div>
+      </div>
+    </li>
+
+    <li>
+      <b>Kendriya Vidyalaya, Azamgarh</b> – Class 10 (2018)  
+      <p>Percentage: 87%</p>
+      <div class="progress">
+        <div class="progress-bar" style="width: 87%;">87%</div>
+      </div>
+    </li>
+  </ul>
+</section>
+
 
     <!-- Projects -->
     <section id="projects">
